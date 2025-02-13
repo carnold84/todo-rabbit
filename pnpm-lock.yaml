@@ -34,6 +34,9 @@ devDependencies:
   '@tauri-apps/cli':
     specifier: ^2
     version: 2.2.7
+  '@trivago/prettier-plugin-sort-imports':
+    specifier: ^5.2.2
+    version: 5.2.2(prettier@3.5.0)
   '@types/react':
     specifier: ^18.3.1
     version: 18.3.18
@@ -43,6 +46,9 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^4.3.4
     version: 4.3.4(vite@6.1.0)
+  prettier:
+    specifier: ^3.5.0
+    version: 3.5.0
   typescript:
     specifier: ~5.6.2
     version: 5.6.3
@@ -762,6 +768,33 @@ packages:
       '@tauri-apps/api': 2.2.0
     dev: false
 
+  /@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.0):
+    resolution: {integrity: sha512-fYDQA9e6yTNmA13TLVSA+WMQRc5Bn/c0EUBditUHNfMMxN7M82c38b1kEggVE3pLpZ0FwkwJkUEKMiOi52JXFA==}
+    engines: {node: '>18.12'}
+    peerDependencies:
+      '@vue/compiler-sfc': 3.x
+      prettier: 2.x - 3.x
+      prettier-plugin-svelte: 3.x
+      svelte: 4.x || 5.x
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+      svelte:
+        optional: true
+    dependencies:
+      '@babel/generator': 7.26.8
+      '@babel/parser': 7.26.8
+      '@babel/traverse': 7.26.8
+      '@babel/types': 7.26.8
+      javascript-natural-sort: 0.7.1
+      lodash: 4.17.21
+      prettier: 3.5.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
@@ -934,6 +967,10 @@ packages:
       react: 18.3.1
     dev: false
 
+  /javascript-natural-sort@0.7.1:
+    resolution: {integrity: sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw==}
+    dev: true
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -947,6 +984,10 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
+    dev: true
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
   /loose-envify@1.4.0:
@@ -987,6 +1028,12 @@ packages:
       nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
+    dev: true
+
+  /prettier@3.5.0:
+    resolution: {integrity: sha512-quyMrVt6svPS7CjQ9gKb3GLEX/rl3BCL2oa/QkNcXv4YNVBC9olt3s+H7ukto06q7B1Qz46PbrKLO34PR6vXcA==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /react-dom@18.3.1(react@18.3.1):

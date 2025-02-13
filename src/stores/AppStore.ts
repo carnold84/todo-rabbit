@@ -6,8 +6,8 @@ import {
   removeTodo,
   toggleTodo,
   updateTodo,
-} from './api';
-import { AppState, Todo } from './types';
+} from '../api';
+import { AppState, Todo } from '../types';
 
 type Store = AppState & {
   addTodo: (todo: string) => void;

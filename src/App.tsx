@@ -1,10 +1,11 @@
 import './themes/light.css';
 import './index.css';
 import styles from './App.module.css';
-import useStore from './AppStore';
+import useStore from './stores/AppStore';
 import AddTodoForm from './components/AddTodoForm/AddTodoForm';
 import Todo from './components/Todo/Todo';
 import { IconoirProvider } from 'iconoir-react';
+
 const App = () => {
   const store = useStore();
 
