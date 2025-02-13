@@ -1,0 +1,28 @@
+:root {
+  --font-family: 'Quicksand', sans-serif;
+
+  --bg-color: #ffffff;
+
+  --action-button-color: #999999;
+  --action-button-hover-color: #9c22c3;
+
+  --input-bg-color: #f9f9f9;
+  --input-border-color: #eeeeee;
+  --input-color: #222222;
+
+  --submit-button-bg-color: #f9f9f9;
+  --submit-button-border-color: #eeeeee;
+  --submit-button-color: #666666;
+  --submit-button-hover-bg-color: #9c22c3;
+  --submit-button-hover-border-color: #9c22c3;
+  --submit-button-hover-color: #ffffff;
+
+  --todo-item-bg-color: #ffffff;
+  --todo-item-border-color: #f1f1f1;
+  --todo-item-color: #666666;
+  --todo-item-icon-fill: #cccccc;
+  --todo-item-icon-hover-fill: #9c22c3;
+  --todo-item-done-color: #cccccc;
+  --todo-item-hover-bg-color: #fdf8ff;
+  --todo-item-hover-color: #9c22c3;
+}
