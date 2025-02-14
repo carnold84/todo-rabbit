@@ -1,4 +1,4 @@
-:root {
+.light_theme {
   --font-family: 'Quicksand', sans-serif;
 
   --bg-color: #ffffff;
@@ -9,6 +9,7 @@
   --input-bg-color: #f9f9f9;
   --input-border-color: #eeeeee;
   --input-color: #222222;
+  --input-focus-border-color: #cccccc;
 
   --submit-button-bg-color: #f9f9f9;
   --submit-button-border-color: #eeeeee;

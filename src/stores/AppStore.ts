@@ -5,6 +5,7 @@ import {
   getTodos,
   removeTodo,
   toggleTodo,
+  updateTheme,
   updateTodo,
 } from '../api';
 import { AppState, Todo } from '../types';
@@ -13,6 +14,7 @@ type Store = AppState & {
   addTodo: (todo: string) => void;
   getTodos: () => Todo[];
   removeTodo: (id: string) => void;
+  toggleTheme: () => void;
   toggleTodo: (id: string) => void;
   updateTodo: (id: string, title: string) => void;
 };
@@ -46,6 +48,15 @@ const useStore = create<Store>((set) => ({
         todos: state.todos.map((todo) =>
           todo.id === id ? { ...todo, completed: !todo.completed } : todo
         ),
+      };
+    });
+  },
+  toggleTheme: () => {
+    const theme = getData().theme === 'light' ? 'dark' : 'light';
+    updateTheme(theme);
+    set(() => {
+      return {
+        theme,
       };
     });
   },

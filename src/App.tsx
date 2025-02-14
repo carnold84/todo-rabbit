@@ -1,13 +1,29 @@
 import './themes/light.css';
+import './themes/dark.css';
 import './index.css';
 import styles from './App.module.css';
 import useStore from './stores/AppStore';
 import AddTodoForm from './components/AddTodoForm/AddTodoForm';
 import Todo from './components/Todo/Todo';
-import { IconoirProvider } from 'iconoir-react';
+import { IconoirProvider, LightBulb, LightBulbOff } from 'iconoir-react';
+import { useEffect } from 'react';
+
+const body = document.body;
 
 const App = () => {
   const store = useStore();
+
+  const toggleTheme = () => {
+    const currentTheme = store.theme;
+    store.toggleTheme();
+    
+    body.classList.add(`${store.theme}_theme`);
+    body.classList.remove(`${currentTheme}_theme`);
+  };
+
+  useEffect(() => {
+    body.classList.add(`${store.theme}_theme`);
+  }, [store.theme]);
 
   return (
     <IconoirProvider iconProps={{ height: 20, width: 20 }}>
@@ -15,6 +31,9 @@ const App = () => {
         <div className={styles.container}>
           <header className={styles.header}>
             <AddTodoForm onSubmit={(text) => store.addTodo(text)} />
+            <button className={styles.action_button} onClick={toggleTheme}>
+              {store.theme === 'light' ? <LightBulbOff /> : <LightBulb />}
+            </button>
           </header>
           <main className={styles.content}>
             <ul className={styles.todo_list}>

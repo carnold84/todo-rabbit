@@ -1,0 +1,30 @@
+.dark_theme {
+  --font-family: 'Quicksand', sans-serif;
+
+  --bg-color: #222222;
+
+  --action-button-color: #666666;
+  --action-button-hover-color: #cccccc;
+
+  --input-bg-color: #292929;
+  --input-border-color: #313131;
+  --input-color: #cccccc;
+  --input-focus-border-color: #3c3c3c;
+
+  --submit-button-bg-color: #292929;
+  --submit-button-border-color: #313131;
+  --submit-button-color: #888888;
+  --submit-button-hover-bg-color: #9c22c3;
+  --submit-button-hover-border-color: #9c22c3;
+  --submit-button-hover-color: #ffffff;
+
+  --todo-item-bg-color: #292929;
+  --todo-item-border-color: #313131;
+  --todo-item-color: #aaaaaa;
+  --todo-item-icon-fill: #666666;
+  --todo-item-icon-hover-fill: #9c22c3;
+  --todo-item-done-color: #444444;
+  --todo-item-hover-bg-color: #313131;
+  --todo-item-hover-color: #cccccc;
+}
+

@@ -1,7 +1,8 @@
 export type Todo = {
-  id: string;
-  title: string;
   completed: boolean;
+  id: string;
+  parentId?: string;
+  title: string;
 };
 
 export type AppState = {

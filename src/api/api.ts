@@ -46,6 +46,12 @@ export const toggleTodo = (id: string) => {
   }
 };
 
+export const updateTheme = (theme: 'light' | 'dark') => {
+  const state = getData();
+  state.theme = theme;
+  saveData(state);
+};
+
 export const updateTodo = (id: string, title: string) => {
   const state = getData();
   const todo = state.todos.find((todo) => todo.id === id);
