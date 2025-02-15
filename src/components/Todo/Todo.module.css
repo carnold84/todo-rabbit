@@ -13,15 +13,27 @@
     flex-grow: 1;
   }
 
+  .handle {
+    align-items: center;
+    color: var(--todo-item-handle-color);
+    cursor: pointer;
+    display: flex;
+    padding: 0 4px 0 12px;
+
+    &:hover {
+      color: var(--todo-item-handle-hover-color);
+    }
+  }
+
   .icon {
     align-items: center;
-    color: var(--todo-item-icon-fill);
+    color: var(--todo-item-icon-color);
     cursor: pointer;
     display: flex;
     padding: 0 10px 0 10px;
 
     &:hover {
-      color: var(--todo-item-icon-hover-fill);
+      color: var(--todo-item-icon-hover-color);
       opacity: 1;
     }
   }
@@ -33,7 +45,7 @@
     display: flex;
     height: 100%;
     flex-grow: 1;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 14px;
     overflow: hidden;
     padding: 0 10px 0 10px;

@@ -1,5 +1,5 @@
 .light_theme {
-  --font-family: 'Quicksand', sans-serif;
+  --font-family: "Quicksand", sans-serif;
 
   --bg-color: #ffffff;
 
@@ -21,8 +21,10 @@
   --todo-item-bg-color: #ffffff;
   --todo-item-border-color: #f1f1f1;
   --todo-item-color: #666666;
-  --todo-item-icon-fill: #cccccc;
-  --todo-item-icon-hover-fill: #9c22c3;
+  --todo-item-handle-color: #cccccc;
+  --todo-item-handle-hover-color: #dddddd;
+  --todo-item-icon-color: #cccccc;
+  --todo-item-icon-hover-color: #9c22c3;
   --todo-item-done-color: #cccccc;
   --todo-item-hover-bg-color: #fdf8ff;
   --todo-item-hover-color: #9c22c3;

@@ -1,5 +1,5 @@
 .dark_theme {
-  --font-family: 'Quicksand', sans-serif;
+  --font-family: "Quicksand", sans-serif;
 
   --bg-color: #222222;
 
@@ -21,10 +21,11 @@
   --todo-item-bg-color: #292929;
   --todo-item-border-color: #313131;
   --todo-item-color: #aaaaaa;
-  --todo-item-icon-fill: #666666;
-  --todo-item-icon-hover-fill: #9c22c3;
+  --todo-item-handle-color: #555555;
+  --todo-item-handle-hover-color: #777777;
+  --todo-item-icon-color: #666666;
+  --todo-item-icon-hover-color: #9c22c3;
   --todo-item-done-color: #444444;
   --todo-item-hover-bg-color: #313131;
   --todo-item-hover-color: #cccccc;
 }
-

@@ -1,10 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
-import { AppState, Todo } from '../types';
+import { v4 as uuidv4 } from "uuid";
 
-const storageKey = 'todo-rabbit';
+import { AppState, Todo } from "../types";
+
+const storageKey = "todo-rabbit";
 
 const defaultState: AppState = {
-  theme: 'light',
+  theme: "light",
   todos: [],
 };
 
@@ -19,9 +20,13 @@ export const getData = (): AppState => {
 
 export const addTodo = (todo: string) => {
   const state = getData();
-  const newTodo = { id: uuidv4(), title: todo, completed: false };
-  console.log(state);
-  state.todos.push(newTodo);
+  const newTodo = { completed: false, id: uuidv4(), order: 0, title: todo };
+  console.log(state, todo);
+  const nextTodos = [...state.todos, newTodo];
+  nextTodos.forEach((todo, i) => {
+    todo.order = i;
+  });
+  state.todos = nextTodos;
   saveData(state);
   return newTodo;
 };
@@ -36,6 +41,19 @@ export const removeTodo = (id: string) => {
   saveData(state);
 };
 
+export const saveAllTodos = (todos: Todo[]) => {
+  const state = getData();
+  state.todos = todos.map((todo, i) => {
+    return {
+      ...todo,
+      order: i,
+    };
+  });
+  saveData(state);
+
+  return state.todos;
+};
+
 export const toggleTodo = (id: string) => {
   const state = getData();
   const todo = state.todos.find((todo) => todo.id === id);
@@ -46,7 +64,7 @@ export const toggleTodo = (id: string) => {
   }
 };
 
-export const updateTheme = (theme: 'light' | 'dark') => {
+export const updateTheme = (theme: "light" | "dark") => {
   const state = getData();
   state.theme = theme;
   saveData(state);

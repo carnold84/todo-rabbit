@@ -1,12 +1,13 @@
-import './themes/light.css';
-import './themes/dark.css';
-import './index.css';
-import styles from './App.module.css';
-import useStore from './stores/AppStore';
-import AddTodoForm from './components/AddTodoForm/AddTodoForm';
-import Todo from './components/Todo/Todo';
-import { IconoirProvider, LightBulb, LightBulbOff } from 'iconoir-react';
-import { useEffect } from 'react';
+import { IconoirProvider, LightBulb, LightBulbOff } from "iconoir-react";
+import { useLayoutEffect } from "react";
+
+import styles from "./App.module.css";
+import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
+import TodoList from "./containers/TodoList/TodoList";
+import "./index.css";
+import useStore from "./stores/AppStore";
+import "./themes/dark.css";
+import "./themes/light.css";
 
 const body = document.body;
 
@@ -16,12 +17,12 @@ const App = () => {
   const toggleTheme = () => {
     const currentTheme = store.theme;
     store.toggleTheme();
-    
+
     body.classList.add(`${store.theme}_theme`);
     body.classList.remove(`${currentTheme}_theme`);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     body.classList.add(`${store.theme}_theme`);
   }, [store.theme]);
 
@@ -32,27 +33,14 @@ const App = () => {
           <header className={styles.header}>
             <AddTodoForm onSubmit={(text) => store.addTodo(text)} />
             <button className={styles.action_button} onClick={toggleTheme}>
-              {store.theme === 'light' ? <LightBulbOff /> : <LightBulb />}
+              {store.theme === "light" ? <LightBulbOff /> : <LightBulb />}
             </button>
           </header>
           <main className={styles.content}>
-            <ul className={styles.todo_list}>
-              {store.todos.length === 0 && (
-                <li className={styles.empty_message}>No todos</li>
-              )}
-              {store.todos.map((todo) => (
-                <li key={todo.id}>
-                  <Todo
-                    id={todo.id}
-                    isDone={todo.completed}
-                    onClick={() => store.toggleTodo(todo.id)}
-                    onRemoveClick={() => store.removeTodo(todo.id)}
-                    onSave={() => store.updateTodo(todo.id, todo.title)}
-                    text={todo.title}
-                  />
-                </li>
-              ))}
-            </ul>
+            {store.todos.length === 0 && (
+              <h4 className={styles.empty_message}>No todos</h4>
+            )}
+            <TodoList items={store.todos} />
           </main>
         </div>
       </div>
