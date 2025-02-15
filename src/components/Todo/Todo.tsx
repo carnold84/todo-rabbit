@@ -4,7 +4,6 @@ import {
   Check,
   CheckCircle,
   Circle,
-  Edit,
   EditPencil,
   Menu,
   Trash,
