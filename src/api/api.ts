@@ -21,7 +21,6 @@ export const getData = (): AppState => {
 export const addTodo = (todo: string) => {
   const state = getData();
   const newTodo = { completed: false, id: uuidv4(), order: 0, title: todo };
-  console.log(state, todo);
   const nextTodos = [...state.todos, newTodo];
   nextTodos.forEach((todo, i) => {
     todo.order = i;
@@ -72,8 +71,11 @@ export const updateTheme = (theme: "light" | "dark") => {
 
 export const updateTodo = (id: string, title: string) => {
   const state = getData();
-  const todo = state.todos.find((todo) => todo.id === id);
-  if (todo) {
-    todo.title = title;
-  }
+  state.todos = state.todos.map((todo) => {
+    if (todo.id === id) {
+      todo.title = title;
+    }
+    return todo;
+  });
+  saveData(state);
 };

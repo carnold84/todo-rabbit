@@ -62,7 +62,7 @@ const TodoList = ({ items: itemsProp }: { items: TodoType[] }) => {
             key={id}
             onClick={() => store.toggleTodo(id)}
             onRemoveClick={() => store.removeTodo(id)}
-            onSave={() => store.updateTodo(id, title)}
+            onSave={(id, text) => store.updateTodo(id, text)}
             text={title}
           />
         ))}

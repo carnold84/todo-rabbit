@@ -20,12 +20,11 @@
 
   --todo-item-bg-color: #ffffff;
   --todo-item-border-color: #f1f1f1;
-  --todo-item-color: #666666;
   --todo-item-handle-color: #cccccc;
   --todo-item-handle-hover-color: #dddddd;
   --todo-item-icon-color: #cccccc;
   --todo-item-icon-hover-color: #9c22c3;
-  --todo-item-done-color: #cccccc;
-  --todo-item-hover-bg-color: #fdf8ff;
-  --todo-item-hover-color: #9c22c3;
+  --todo-item-input-bg-color: #f6f6f6;
+  --todo-item-text-done-color: #cccccc;
+  --todo-item-text-color: #666666;
 }
